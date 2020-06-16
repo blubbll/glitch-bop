@@ -2,10 +2,10 @@ import {
     WebView
 } from "https://deno.land/x/webview/mod.ts";
 
-for (const web in ["https://deno-page.glitch.me"]) {
+["https://deno-page.glitch.me"].foreach(url => {
     new WebView({
         title: "Multiple deno_webview example",
-        url: "https://deno-page.glitch.me",
+        url: url,
         width: 400,
         height: 200,
         resizable: true,
@@ -16,7 +16,6 @@ for (const web in ["https://deno-page.glitch.me"]) {
 
 (async () => {
     const waitMins = 3;
-    await webview.run();
     await new Promise(resolve => setTimeout(resolve, 60 * 1000 * waitMins));
     window.Deno.exit();
 })();
