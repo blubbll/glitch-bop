@@ -2,9 +2,11 @@ import {
     WebView
 } from "https://deno.land/x/webview/mod.ts";
 
-["https://deno-page.glitch.me"].foreach(url => {
+var urls:string[];
+urls = ["https://deno-page.glitch.me"];
+urls.forEach((url:string) => {
     new WebView({
-        title: "Multiple deno_webview example",
+        title: `${url}`,
         url: url,
         width: 400,
         height: 200,
@@ -12,7 +14,7 @@ import {
         debug: true,
         frameless: false
     }).run();
-}
+});
 
 (async () => {
     const waitMins = 3;
