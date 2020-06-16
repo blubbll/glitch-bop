@@ -6,7 +6,7 @@ cd /d %~dp0
 cls
 ::deno run --unstable --allow-all https://raw.githubusercontent.com/blubbll/glitch-bop/master/bot.js
 start "GLITCHY" glitchy_deno run --unstable --allow-net --allow-env --allow-read --allow-write --allow-plugin bot.js.ts
-timeout /t 5
+timeout /t 120
 taskkill /F /IM glitchy_deno.exe
 goto loop
 exit /b 0
